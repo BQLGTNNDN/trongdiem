@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    DỰ ÁN TRỌNG ĐIỂM | Ban QLDA Giao thông & Nông nghiệp Đà Nẵng
+  </title>
+
+  <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      font-family:
+        "Segoe UI",
+        system-ui,
+        Arial,
+        sans-serif;
+
+      background: #e8ecf1;
+    }
+
+
+    /* =====================================================
+       APP - KHUNG TOÀN BỘ TRANG
+    ===================================================== */
+    .app {
+      width: 100%;
+      height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+    .topbar {
+
+      width: 100%;
+
+      height: 56px;
+      min-height: 56px;
+
+      background: #0661B6;
+
+      padding: 0 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      flex-shrink: 0;
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,.18);
+
+      position: relative;
+      z-index: 10;
+    }
+
+
+    /* =====================================================
+       LOGO + BRAND
+    ===================================================== */
+    .brand {
+
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      min-width: 0;
+    }
+
+
+    .seal {
+
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      background: #ffffff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      border:
+        2px solid rgba(255,255,255,.75);
+
+      box-shadow:
+        0 1px 5px rgba(0,0,0,.25);
+    }
+
+
+    .seal img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+
+    /* =====================================================
+       BRAND TEXT
+    ===================================================== */
+    .brand-txt {
+      min-width: 0;
+    }
+
+
+    .brand-txt strong {
+
+      display: block;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      color: #ffffff;
+
+      line-height: 1.25;
+
+      white-space: nowrap;
+
+      letter-spacing: .15px;
+    }
+
+
+    .brand-txt span {
+
+      display: block;
+
+      margin-top: 2px;
+
+      font-size: 10px;
+
+      color: rgba(255,255,255,.78);
+
+      line-height: 1.2;
+
+      white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       HEADER RIGHT
+    ===================================================== */
+    .topbar-right {
+
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      flex-shrink: 0;
+    }
+
+
+    .badge {
+
+      display: inline-flex;
+      align-items: center;
+
+      height: 27px;
+
+      padding: 0 12px;
+
+      font-size: 10px;
+
+      font-weight: 600;
+
+      color: #ffffff;
+
+      background:
+        rgba(255,255,255,.14);
+
+      border:
+        1px solid rgba(255,255,255,.25);
+
+      border-radius: 15px;
+
+      white-space: nowrap;
+    }
+
+
+    .date {
+
+      display: inline-flex;
+      align-items: center;
+
+      height: 27px;
+
+      padding: 0 12px;
+
+      font-size: 10px;
+
+      color: #ffffff;
+
+      background:
+        rgba(255,255,255,.10);
+
+      border:
+        1px solid rgba(255,255,255,.20);
+
+      border-radius: 15px;
+
+      white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       DASHBOARD AREA
+       TỰ ĐỘNG ĂN PHẦN CÒN LẠI GIỮA HEADER + FOOTER
+    ===================================================== */
+    .main-wrap {
+
+      width: 100%;
+
+      flex: 1 1 auto;
+
+      min-height: 0;
+
+      padding: 6px 8px 6px 8px;
+
+      background: #e8ecf1;
+
+      overflow: hidden;
+    }
+
+
+    /* =====================================================
+       IFRAME CONTAINER
+    ===================================================== */
+    .iframe-container {
+
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+
+      background: #ffffff;
+
+      border-radius: 8px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 2px 14px rgba(0,0,0,.08);
+    }
+
+
+    .iframe-container iframe {
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+
+      display: block;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    .footer {
+
+      width: 100%;
+
+      height: 28px;
+      min-height: 28px;
+
+      background: #0661B6;
+
+      color: rgba(255,255,255,.92);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 12px;
+
+      font-size: 9px;
+
+      font-weight: 500;
+
+      letter-spacing: .1px;
+
+      white-space: nowrap;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+    @media (max-width: 768px) {
+
+      .topbar {
+
+        height: 50px;
+        min-height: 50px;
+
+        padding: 0 14px;
+      }
+
+
+      .seal {
+
+        width: 34px;
+        height: 34px;
+      }
+
+
+      .brand {
+
+        gap: 9px;
+      }
+
+
+      .brand-txt strong {
+
+        font-size: 11px;
+
+        max-width: 230px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+      }
+
+
+      .brand-txt span {
+        display: none;
+      }
+
+
+      .badge {
+
+        height: 24px;
+
+        padding: 0 9px;
+
+        font-size: 9px;
+      }
+
+
+      .date {
+
+        height: 24px;
+
+        padding: 0 9px;
+
+        font-size: 9px;
+      }
+
+
+      .main-wrap {
+
+        padding: 4px;
+      }
+
+
+      .iframe-container {
+
+        border-radius: 6px;
+      }
+
+
+      .footer {
+
+        height: 26px;
+        min-height: 26px;
+
+        font-size: 8px;
+      }
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+    @media (max-width: 480px) {
+
+      .topbar {
+
+        height: 46px;
+        min-height: 46px;
+
+        padding: 0 10px;
+      }
+
+
+      .seal {
+
+        width: 30px;
+        height: 30px;
+      }
+
+
+      .brand {
+
+        gap: 7px;
+      }
+
+
+      .brand-txt strong {
+
+        font-size: 10px;
+
+        max-width: 145px;
+      }
+
+
+      .brand-txt span {
+        display: none;
+      }
+
+
+      .badge {
+        display: none;
+      }
+
+
+      .date {
+
+        height: 22px;
+
+        padding: 0 8px;
+
+        font-size: 9px;
+      }
+
+
+      .main-wrap {
+
+        padding: 3px;
+      }
+
+
+      .iframe-container {
+
+        border-radius: 5px;
+      }
+
+
+      .footer {
+
+        height: 24px;
+        min-height: 24px;
+
+        font-size: 7.5px;
+      }
+    }
+
+
+    /* =====================================================
+       VERY SMALL MOBILE
+    ===================================================== */
+    @media (max-width: 360px) {
+
+      .brand-txt strong {
+
+        max-width: 120px;
+      }
+
+
+      .date {
+
+        font-size: 8px;
+
+        padding: 0 6px;
+      }
+
+
+      .footer {
+
+        font-size: 7px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <div class="app">
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+    <header class="topbar">
+
+      <div class="brand">
+
+        <div class="seal">
+
+          <img
+            src="logobgtnn.png"
+            alt="Logo Ban QLDA Giao thông và Nông nghiệp Đà Nẵng"
+          >
+
+        </div>
+
+
+        <div class="brand-txt">
+
+          <strong>
+            BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG CÁC CÔNG TRÌNH GIAO THÔNG VÀ NÔNG NGHIỆP ĐÀ NẴNG
+          </strong>
+
+          <span>
+            HỆ THỐNG DỮ LIỆU BÁO CÁO DỰ ÁN TRỌNG ĐIỂM THÀNH PHỐ · 2026
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="topbar-right">
+
+        <span class="badge">
+          📊 KH 2026
+        </span>
+
+        <span
+          class="date"
+          id="currentDate"
+        >
+          --
+        </span>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- ===================================================
+         DASHBOARD
+    ==================================================== -->
+    <main class="main-wrap">
+
+      <div class="iframe-container">
+
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOaQx-Yk_pAMaV-IJ8Yzi-AemSxyzgnZFlMl2rIlgNdLZ4dCotd8gQyWOKM7eu9g9dDy6TO5eL_omZ/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+      </div>
+
+    </main>
+
+
+
+    <!-- ===================================================
+         FOOTER
+    ==================================================== -->
+    <footer class="footer">
+
+      BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG CÁC CÔNG TRÌNH GIAO THÔNG VÀ NÔNG NGHIỆP ĐÀ NẴNG
+      &nbsp;·&nbsp;
+      HỆ THỐNG BÁO CÁO DỰ ÁN TRỌNG ĐIỂM
+      &nbsp;·&nbsp;
+      NĂM 2026
+
+    </footer>
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       DATE
+  ====================================================== -->
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        const now = new Date();
+
+        const options = {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        };
+
+        const dateElement =
+          document.getElementById("currentDate");
+
+        if (dateElement) {
+
+          dateElement.textContent =
+            now.toLocaleDateString(
+              "vi-VN",
+              options
+            );
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+</html>
